@@ -1,19 +1,21 @@
 export class Negociacao {
-    private _data: Date;
-    private _quantidade: number;
-    private _valor: number;
 
-    constructor(date: Date, quant: number, val: number) {
-        this._data = date;
-        this._quantidade = quant;
-        this._valor = val;
-    }
+    constructor(
+        private _data: Date,
+        private _quantidade: number,
+        private _valor: number
+    ) {}
+
     get volume(): number {
         return this._quantidade * this._valor;
     }
 
+    /** Nesse caso eu estou retornando um objeto Date() que possui metodos que permitem alterar o estado do atributo
+     * Por isso, uma boa pratica e retornar uma copia do atributo
+     */
     get data(): Date {
-        return this._data;
+        const dataCopy = new Date(this._data.getTime())
+        return dataCopy;
     }
 
     get quantidade(): number {
