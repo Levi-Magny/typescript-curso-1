@@ -1,5 +1,6 @@
 export class Negociacoes {
     constructor() {
+<<<<<<< HEAD
         this.negociacoes = [];
     }
     adiciona(negociacao) {
@@ -7,5 +8,14 @@ export class Negociacoes {
     }
     lista() {
         return this.negociacoes;
+=======
+        this._negociacoes = [];
+    }
+    adiciona(negociacao) {
+        this._negociacoes.push(negociacao);
+    }
+    lista() {
+        return this._negociacoes;
+>>>>>>> arquivos-iniciais
     }
 }
